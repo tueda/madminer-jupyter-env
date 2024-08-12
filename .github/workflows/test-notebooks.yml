@@ -128,7 +128,7 @@ jobs:
       notebook: 4b_fisher_information.ipynb
 
   tutorial_particle_physics_4c:
-    needs: tutorial_particle_physics_3a
+    needs: tutorial_particle_physics_4a
     if: ${{ !cancelled() && !failure() }}
     uses: ./.github/workflows/run-tutorial-notebook.yml
     with:
