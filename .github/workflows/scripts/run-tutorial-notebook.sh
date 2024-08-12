@@ -15,7 +15,9 @@ time {
   apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
-  python3 -m pip install --no-cache-dir papermill
+  # papermill 2.4.0+ is not compatible with jupyter-client 8.0.0+.
+  # https://github.com/scikit-hep/pyhf/issues/2104
+  python3 -m pip install --no-cache-dir papermill==2.6.0 jupyter-client==7.4.9
 }
 echo "::endgroup::"
 
