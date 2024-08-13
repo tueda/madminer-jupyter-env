@@ -15,8 +15,8 @@
 
 
 #### Base image
-#### Reference: https://github.com/root-project/root-docker/blob/master/ubuntu/Dockerfile
-FROM rootproject/root:6.24.00-ubuntu20.04
+#### Reference: https://github.com/root-project/root-docker/blob/fbb23ce/ubuntu2204/Dockerfile
+FROM rootproject/root:6.32.02-ubuntu22.04
 
 
 #### Install binary dependencies
