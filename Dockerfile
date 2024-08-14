@@ -34,19 +34,19 @@ RUN apt-get update && \
 
 
 #### Define working folders
-ENV PROJECT_FOLDER "/madminer"
-ENV SOFTWARE_FOLDER "/madminer/software"
+ENV PROJECT_FOLDER="/madminer"
+ENV SOFTWARE_FOLDER="/madminer/software"
 
 
 #### MadGraph 5 environment variables
-ENV MG_VERSION "MG5_aMC_v2.9.16"
-ENV MG_FOLDER "MG5_aMC_v2_9_16"
-ENV MG_FOLDER_PATH "${SOFTWARE_FOLDER}/${MG_FOLDER}"
-ENV MG_BINARY_PATH "${SOFTWARE_FOLDER}/${MG_FOLDER}/bin/mg5_aMC"
+ENV MG_VERSION="MG5_aMC_v2.9.16"
+ENV MG_FOLDER="MG5_aMC_v2_9_16"
+ENV MG_FOLDER_PATH="${SOFTWARE_FOLDER}/${MG_FOLDER}"
+ENV MG_BINARY_PATH="${SOFTWARE_FOLDER}/${MG_FOLDER}/bin/mg5_aMC"
 
 #### CERN ROOT environment variables
-ENV PATH $PATH:$ROOTSYS/bin
-ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:$ROOTSYS/lib
+ENV PATH=$PATH:$ROOTSYS/bin
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
 
 
 ### Install MadGraph 5 Python dependencies
@@ -73,7 +73,7 @@ RUN echo "set auto_convert_model T" | python3 ${MG_BINARY_PATH}
 RUN echo "import model EWdim6-full" | python3 ${MG_BINARY_PATH}
 
 # Delphes environment variables
-ENV ROOT_INCLUDE_PATH "${ROOT_INCLUDE_PATH}:${MG_FOLDER_PATH}/Delphes/external"
+ENV ROOT_INCLUDE_PATH="${ROOT_INCLUDE_PATH}:${MG_FOLDER_PATH}/Delphes/external"
 
 
 #### Copy files
