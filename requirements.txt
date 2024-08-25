@@ -1,5 +1,5 @@
 jupyter==1.0.0
-madminer @ git+https://github.com/madminer-tool/madminer@main
+madminer @ git+https://github.com/tueda/madminer@fix-save-and-load-systematics
 matplotlib==3.2.2
 numpy==1.20.3
 scipy==1.8.1
