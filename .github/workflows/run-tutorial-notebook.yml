@@ -7,6 +7,16 @@ name: Run tutorial notebook in Docker
 on:
   workflow_call:
     inputs:
+      repository:
+        description: MadMiner Git repository
+        required: false
+        default: https://github.com/madminer-tool/madminer.git
+        type: string
+      branch:
+        description: Branch to be cloned
+        required: false
+        default: main
+        type: string
       working-directory:
         description: Working directory
         required: false
@@ -48,7 +58,7 @@ jobs:
     - name: Prepare the shared volume
       run: |
         mkdir madminer_shared
-        git -C madminer_shared clone --depth=1 https://github.com/madminer-tool/madminer.git
+        git -C madminer_shared clone --depth=1 -b ${{ inputs.branch }} ${{ inputs.repository }}
 
     - name: Download output files uploaded by previous jobs
       uses: actions/download-artifact@v4
