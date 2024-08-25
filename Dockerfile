@@ -39,8 +39,8 @@ ENV SOFTWARE_FOLDER "/madminer/software"
 
 
 #### MadGraph 5 environment variables
-ENV MG_VERSION "MG5_aMC_v2.9.16"
-ENV MG_FOLDER "MG5_aMC_v2_9_16"
+ENV MG_VERSION "MG5_aMC_v3.5.5"
+ENV MG_FOLDER "MG5_aMC_v3_5_5"
 ENV MG_FOLDER_PATH "${SOFTWARE_FOLDER}/${MG_FOLDER}"
 ENV MG_BINARY_PATH "${SOFTWARE_FOLDER}/${MG_FOLDER}/bin/mg5_aMC"
 
@@ -55,7 +55,7 @@ RUN python3 -m pip install --no-cache-dir --upgrade pip && \
 
 #### Install MadGraph 5
 RUN mkdir -p ${SOFTWARE_FOLDER} && true \
-    | curl -sSL "https://launchpad.net/mg5amcnlo/lts/2.9.x/+download/${MG_VERSION}.tar.gz" \
+    | curl -sSL "https://launchpad.net/mg5amcnlo/3.0/3.5.x/+download/${MG_VERSION}.tar.gz" \
     | tar -xz -C ${SOFTWARE_FOLDER}
 
 
